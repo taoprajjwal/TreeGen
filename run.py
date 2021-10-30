@@ -221,6 +221,12 @@ def g_eval(sess, model, batch_data):
 
 
 def run():
+
+    ### For Multi-GPU (prevents BLAS GEMM launch failed)
+    physical_devices = tf.config.list_physical_devices('GPU')
+    for device in physical_devices:
+        tf.config.experimental.set_memory_growth(device, True)
+
     Code_gen_model = code_gen_model(classnum, embedding_size, conv_layernum, conv_layersize, rnn_layernum,
                                     batch_size, NL_vocabu_size, Tree_vocabu_size, NL_len, Tree_len, parent_len, learning_rate, keep_prob, len(char_vocabulary), rules_len)
     valid_batch, _ = batch_data(batch_size, "dev") # read data 
