@@ -267,12 +267,12 @@ def J_run():
 
 def create_model(session, g, placeholder=""):
     if(os.path.exists(project + "save1")):
-        saver = tf.train.Saver()
+        saver = tf.compat.v1.train.Saver()
         saver.restore(session, tf.train.latest_checkpoint(project + "save1/"))
         print("load the model")
     else:
         classvec = data_random()
-        session.run(tf.global_variables_initializer(), feed_dict={d.variable:classvec})
+        session.run(tf.compat.v1.global_variables_initializer(), feed_dict={d.variable:classvec})
         print("create a new model")
 
 
@@ -574,11 +574,11 @@ def predict():
 
     Code_gen_model = code_gen_model(classnum, embedding_size, conv_layernum, conv_layersize, rnn_layernum,
                                     batch_size, NL_vocabu_size, Tree_vocabu_size, NL_len, Tree_len, parent_len, learning_rate, keep_prob, len(char_vocabulary), rules_len)
-    config = tf.ConfigProto(device_count={"GPU": 0})
+    config = tf.compat.v1.ConfigProto(device_count={"GPU": 0})
     #config = tf.ConfigProto(allow_soft_placement=True)
     #config.gpu_options.allow_growth = True
 
-    with tf.Session(config=config) as sess:
+    with tf.compat.v1.Session(config=config) as sess:
         create_model(sess, "", "")
         f = open(project + "input.txt", "r")
         lines = f.readlines()

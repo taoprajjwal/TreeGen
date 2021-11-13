@@ -11,7 +11,7 @@ import math
 import queue as Q
 from copy import deepcopy
 
-os.environ["CUDA_VISIBLE_DEVICES"]="5"
+os.environ["CUDA_VISIBLE_DEVICES"]="7"
 
 vocabu = {}
 tree_vocabu = {}
@@ -95,20 +95,20 @@ def get_card(lst):
 
 def create_model(session, g, placeholder=""):
     if(os.path.exists(project + "save1")):
-        saver = tf.train.Saver()
+        saver = tf.compat.v1.train.Saver()
         saver.restore(session, tf.train.latest_checkpoint(project + "save1/"))
         print("load the model")
     else:
-        session.run(tf.global_variables_initializer(), feed_dict={})
+        session.run(tf.compat.v1.global_variables_initializer(), feed_dict={})
         print("create a new model")
 
 
 def save_model(session, number):
-    saver = tf.train.Saver()
+    saver = tf.compat.v1.train.Saver()
     saver.save(session, project + "save" + str(number) + "/model.cpkt")
 
 def save_model_time(session, number, card):
-    saver = tf.train.Saver()
+    saver = tf.compat.v1.train.Saver()
     saver.save(session, project + "save_list/save" + str(number) + "_" + str(card) + "/model.cpkt")
 
 def get_state(batch_data):
@@ -223,19 +223,19 @@ def g_eval(sess, model, batch_data):
 def run():
 
     ### For Multi-GPU (prevents BLAS GEMM launch failed)
-    physical_devices = tf.config.list_physical_devices('GPU')
-    for device in physical_devices:
-        tf.config.experimental.set_memory_growth(device, True)
+    #physical_devices = tf.config.list_physical_devices('GPU')
+    #for device in physical_devices:
+        #tf.config.experimental.set_memory_growth(device,True)
 
     Code_gen_model = code_gen_model(classnum, embedding_size, conv_layernum, conv_layersize, rnn_layernum,
                                     batch_size, NL_vocabu_size, Tree_vocabu_size, NL_len, Tree_len, parent_len, learning_rate, keep_prob, len(char_vocabulary), rules_len)
     valid_batch, _ = batch_data(batch_size, "dev") # read data 
     best_accuracy = 0
     best_card = 0
-    config = tf.ConfigProto(allow_soft_placement=True)#, log_device_placement=True)
+    config = tf.compat.v1.ConfigProto(allow_soft_placement=True)#, log_device_placement=True)
     config.gpu_options.allow_growth = True
     f = open(project + "out.txt", "w")
-    with tf.Session(config=config) as sess:
+    with tf.compat.v1.Session(config=config) as sess:
         create_model(sess, Code_gen_model, "")
         best_time = -1
         for i in tqdm(range(pretrain_times)):
@@ -293,7 +293,7 @@ def run():
                           str(ac) + " string accuracy is " + str(card))
                     save_model_time(sess, i, str(int(Code_gen_model.steps)))
                 g_pretrain(sess, Code_gen_model, batch[j])
-                tf.train.global_step(sess, Code_gen_model.global_step)
+                tf.compat.v1.train.global_step(sess, Code_gen_model.global_step)
 
     f.close()
     #print("training finish")

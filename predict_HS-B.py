@@ -306,17 +306,17 @@ def data_random():
 
 def create_model(session, g, placeholder=""):
     if(os.path.exists(project + "save1")):
-        saver = tf.train.Saver()
+        saver = tf.compat.v1.train.Saver()
         saver.restore(session, tf.train.latest_checkpoint(project + "save1"))
         print("load the model")
     else:
         classvec = data_random()
-        session.run(tf.global_variables_initializer(), feed_dict={d.variable:classvec})
+        session.run(tf.compat.v1.global_variables_initializer(), feed_dict={d.variable:classvec})
         print("create a new model")
 
 
 def save_model(session, number):
-    saver = tf.train.Saver()
+    saver = tf.compat.v1.train.Saver()
     saver.save(session, "save" + str(number) + "/model.cpkt")
 
 class Javaoutput:
@@ -668,13 +668,13 @@ def predict():
     #gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.6)
     #config = tf.ConfigProto(device_count={"GPU": 0})
     #config = tf.ConfigProto(allow_soft_placement=True, gpu_options=gpu_options)
-    config = tf.ConfigProto(allow_soft_placement=True)
+    config = tf.compat.v1.ConfigProto(allow_soft_placement=True)
     config.gpu_options.allow_growth = True
 
     #gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0)
     #config = tf.ConfigProto(allow_soft_placement=True, gpu_options=gpu_options)
     #config = tf.ConfigProto(allow_soft_placement=True, gpu_options=config)
-    with tf.Session(config=config) as sess:
+    with tf.compat.v1.Session(config=config) as sess:
         create_model(sess, "", "")
         f = open(project + "input.txt", "r")
         lines = f.readlines()
