@@ -1,5 +1,6 @@
 #-*-coding:utf-8-*-
 import sys
+sys.argv[1]="ATIS"
 project = str(sys.argv[1]) + "/"
 from code_generate_model import *
 from resolve_data import *
@@ -11,7 +12,7 @@ import math
 import queue as Q
 from copy import deepcopy
 
-os.environ["CUDA_VISIBLE_DEVICES"]="7"
+os.environ["CUDA_VISIBLE_DEVICES"]="0,1,2,3,4,5,6,7"
 
 vocabu = {}
 tree_vocabu = {}
@@ -123,6 +124,8 @@ def get_state(batch_data):
     return vec
 
 def g_pretrain(sess, model, batch_data):
+
+    print("Pretraining")
     batch = deepcopy(batch_data)
     rewards = np.zeros([len(batch[1])])
 
@@ -173,6 +176,7 @@ def rules_component_batch(batch):
     return [vecnode, vecson]
 
 def g_eval(sess, model, batch_data):
+    print("EVAL")
     batch = batch_data
     rewards = np.zeros([len(batch[1])])
 
@@ -229,7 +233,7 @@ def run():
 
     Code_gen_model = code_gen_model(classnum, embedding_size, conv_layernum, conv_layersize, rnn_layernum,
                                     batch_size, NL_vocabu_size, Tree_vocabu_size, NL_len, Tree_len, parent_len, learning_rate, keep_prob, len(char_vocabulary), rules_len)
-    valid_batch, _ = batch_data(batch_size, "dev") # read data 
+    valid_batch, _ = batch_data(batch_size, "dev") # read data
     best_accuracy = 0
     best_card = 0
     config = tf.compat.v1.ConfigProto(allow_soft_placement=True)#, log_device_placement=True)
@@ -257,6 +261,7 @@ def run():
                     strs = str(ac) + " " + str(card) + "\n"
                     f.write(strs)
                     f.flush()
+
 
                     print("current accuracy " +
                           str(ac) + " string accuarcy is " + str(card))
@@ -292,6 +297,7 @@ def run():
                     print("current accuracy " +
                           str(ac) + " string accuracy is " + str(card))
                     save_model_time(sess, i, str(int(Code_gen_model.steps)))
+
                 g_pretrain(sess, Code_gen_model, batch[j])
                 tf.compat.v1.train.global_step(sess, Code_gen_model.global_step)
 

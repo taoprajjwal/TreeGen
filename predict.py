@@ -586,7 +586,7 @@ def predict():
 
         for i in range(len(lines)):
             Nl = lines[i].strip()        
-            print(Nl)
+            #print(Nl)
             f = open(project + "Tree_Feature.out", "w")
             f.write("root ^")
             f.write("\n")

@@ -347,7 +347,6 @@ def query_lca(start, end, fathers, nodes_deepth):
             break
     return len(fathers[start]) + len(fathers[end]) - 2 * (1 + same_site)
 
-    
 def line2mask(lines, length):
     nodes_deepth = lines.strip().split()
     nodes_deepth = [int(-1)] +  nodes_deepth

@@ -2,9 +2,12 @@
 import tensorflow as tf
 import math
 import numpy as np
-from tensorflow.contrib import *
+#from tensorflow.contrib import *
 
-def noise_from_step_num():
+##Changed to disable eager execution
+tf.compat.v1.disable_eager_execution()
+
+def noise_from_step_num(global_step : tf.Variable):
   """Quantization noise equal to (phi * (step_num + 1)) mod 1.0.
   Not using random_uniform here due to a problem on TPU in that random seeds
   are not respected, which may cause the parameters on different replicas
@@ -12,7 +15,7 @@ def noise_from_step_num():
   Returns:
     a float32 scalar
   """
-  step = tf.cast(tf.compat.v1.train.get_or_create_global_step(), dtype=tf.int32) + 1
+  step = tf.cast(global_step, dtype=tf.int32) + 1
   phi = ((5 ** 0.5) - 1) / 2
   # Naive computation tf.mod(phi * step, 1.0) in float32 would be disastrous
   # due to loss of precision when the step number gets large.
@@ -99,7 +102,8 @@ class AdafactorOptimizer(tf.compat.v1.train.Optimizer):
                use_locking=False,
                name="Adafactor",
                epsilon1=1e-30,
-               epsilon2=1e-3):
+               epsilon2=1e-3,
+               global_step=None):
     """Construct a new Adafactor optimizer.
     See class comment.
     Args:
@@ -125,18 +129,19 @@ class AdafactorOptimizer(tf.compat.v1.train.Optimizer):
     """
     super(AdafactorOptimizer, self).__init__(use_locking, name)
     self._multiply_by_parameter_scale = multiply_by_parameter_scale
+    self.global_step=global_step
     if learning_rate is None:
       learning_rate = self._learning_rate_default(multiply_by_parameter_scale)
     self._learning_rate = learning_rate
     if decay_rate is None:
-      decay_rate = self._decay_rate_default()
+      decay_rate = self._decay_rate_default(self.global_step)
     self._decay_rate = decay_rate
     self._beta1 = beta1
     self._clipping_threshold = clipping_threshold
     self._factored = factored
     self._simulated_quantize_bits = simulated_quantize_bits
     self._parameter_encoding = parameter_encoding
-    self._quantization_noise = noise_from_step_num()
+    self._quantization_noise = noise_from_step_num(self.global_step)
     self._epsilon1 = epsilon1
     self._epsilon2 = epsilon2
 
@@ -252,11 +257,11 @@ class AdafactorOptimizer(tf.compat.v1.train.Optimizer):
     updates = [var_update] + updates
     return tf.group(*updates)
 
-  def _decay_rate_default(self):
-    return adafactor_decay_rate_pow(0.8)
+  def _decay_rate_default(self,global_step):
+    return adafactor_decay_rate_pow(0.8,global_step)
 
   def _learning_rate_default(self, multiply_by_parameter_scale):
-    learning_rate = tf.minimum(tf.math.rsqrt(step_num() + 1.0), 0.01)
+    learning_rate = tf.minimum(tf.math.rsqrt(step_num(self.global_step) + 1.0), 0.01)
     if not multiply_by_parameter_scale:
       learning_rate *= 0.05
     return learning_rate
@@ -275,18 +280,18 @@ def adafactor_decay_rate_adam(beta2):
   return decay
 
 
-def adafactor_decay_rate_pow(exponent):
+def adafactor_decay_rate_pow(exponent,global_step):
   """Second moment decay rate where memory-length grows as step_num^exponent.
   Args:
     exponent: a float between 0 and 1
   Returns:
     a scalar
   """
-  return 1.0 - tf.pow((step_num() + 1.0), -exponent)
+  return 1.0 - tf.pow((step_num(global_step) + 1.0), -exponent)
 
 
-def step_num():
-  return tf.cast(tf.compat.v1.train.get_or_create_global_step(), dtype=tf.float32)
+def step_num(global_step):
+  return tf.cast(global_step, dtype=tf.float32)
 
 
 def adafactor_optimizer_from_hparams(hparams, lr):
@@ -406,6 +411,7 @@ class code_gen_model:
         W_o = tf.compat.v1.layers.dense(concat_head, d, name="qkv2head", use_bias=False)#self.weight_variable(shape=[int(concat_head.shape[2]), d])
         return W_o#self.mul(concat_head, W_o)
 
+
     def multiheadattention(self, H, mask, k, flag=False, antimask="", use_posi_att=False, posi_embedding=""):
         m = int(H.shape[1])
         d = int(H.shape[2])
@@ -473,9 +479,11 @@ class code_gen_model:
         return tf.nn.dropout(input, 1 - (self.keep_prob))
 
     def layer_norm(self, vec, na=None, axis=2):
-        return tf.contrib.layers.layer_norm(vec, scope=na, begin_norm_axis=axis, reuse=None)
-    
-        
+        #return tf.contrib.layers.layer_norm(vec, scope=na, begin_norm_axis=axis, reuse=None)
+        norm= tf.keras.layers.LayerNormalization(axis=axis)
+        return norm(vec)
+
+
 
     def sepconv(self, state, size, mask):
         state = self.drop(tf.compat.v1.layers.separable_conv1d(tf.expand_dims(mask, -1) * self.drop(tf.compat.v1.layers.separable_conv1d(state, size, 3, activation=self.gelu, padding="SAME", name="conv")), size, 3, padding="SAME", name="dense_2") + state)
@@ -630,7 +638,7 @@ class code_gen_model:
         self.steps = 0.
         act_epsilon = 0.01
         self.max_steps = 5
-        self.global_step=tf.Variable(1, trainable=False, name="global_step") 
+        self.global_step=tf.Variable(1, trainable=False, name="global_step",dtype=tf.dtypes.int32)
         self.keep_prob = tf.compat.v1.placeholder(tf.float32)
         self.is_train = tf.compat.v1.placeholder(tf.bool)
         self.input_NL = tf.compat.v1.placeholder(tf.int32, shape=[None, NL_len])
@@ -713,7 +721,7 @@ class code_gen_model:
             n_updates = tf.zeros(update_shape, name="n_updates")
             previous_state = tf.zeros_like(state, name="previous_state")
             step = tf.constant(0, dtype=tf.int32)
-            copy = tf.zeros([tf.shape(input=state)[0], tf.shape(input=state)[1], tf.shape(input=em_NL)[1]], name="copy_prev")
+            #copy = tf.zeros([tf.shape(input=state)[0], tf.shape(input=state)[1], tf.shape(input=em_NL)[1]], name="copy_prev")
             for i in range(int(self.max_steps - 1)):
                 with tf.compat.v1.variable_scope("AST_READER" + str(i), reuse=None):
                     (state, self.embedding_size, step, halting_probability, remainders, n_updates, previous_state, em_Rule_Type, nl_conv, em_Rule_List) = self.ast_reader(state, self.embedding_size, step, halting_probability, remainders, n_updates, previous_state, em_Rule_Type, nl_conv, em_Rule_List)
@@ -759,5 +767,5 @@ class code_gen_model:
 
         self.loss = self.cross_entropy 
         self.params = [param for param in tf.compat.v1.trainable_variables()]
-        global_step = tf.cast(self.global_step, dtype=tf.float32)
-        self.optim = AdafactorOptimizer().minimize(self.loss , global_step=self.global_step)
+        #global_step = tf.cast(self.global_step, dtype=tf.float32)
+        self.optim = AdafactorOptimizer(global_step=self.global_step).minimize(self.loss , global_step=self.global_step)
