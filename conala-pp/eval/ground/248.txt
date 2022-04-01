@@ -1,0 +1,1 @@
+root Module body Expr value Subscript value Subscript value Name id result_fu_nc_na_me ^ ^ ^ ^ slice Index value Num 0_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ slice Index value Str s from_user_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

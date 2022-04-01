@@ -1,0 +1,1 @@
+root Module body Assign targets Name id encoded_fu_nc_na_me ^ ^ ^ ^ value Call func Attribute value Str s data_to_be_encoded_fu_nc_na_me ^ ^ ^ ^ attr encode_fu_nc_na_me ^ ^ ^ ^ args Str s ascii_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

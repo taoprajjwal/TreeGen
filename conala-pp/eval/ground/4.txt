@@ -1,0 +1,1 @@
+root Module body Expr value Call func Name id print_fu_nc_na_me ^ ^ ^ ^ args BinOp left Str s %*s_:_%*s_fu_nc_na_me ^ ^ ^ ^ op Mod ^ ^ right Tuple elts Num 20_fu_nc_na_me ^ ^ Str s Python_fu_nc_na_me ^ ^ ^ Num 20_fu_nc_na_me ^ ^ Str s Very_Good_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

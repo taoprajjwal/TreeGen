@@ -1,0 +1,1 @@
+  root Module body Expr value Call func Name id print_fu_nc_na_me ^ ^ ^ ^ args Call func Attribute value Attribute value Name id os_fu_nc_na_me ^ ^ ^ ^ attr path_fu_nc_na_me ^ ^ ^ ^ attr join_fu_nc_na_me ^ ^ ^ ^ args Name id base64_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

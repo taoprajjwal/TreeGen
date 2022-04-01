@@ -1,0 +1,1 @@
+root Module body Expr value Call func Name id print_fu_nc_na_me ^ ^ ^ ^ args Call func Name id type_fu_nc_na_me ^ ^ ^ ^ args Name id variable_name_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

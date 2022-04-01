@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Call func Attribute value Name id d_fu_nc_na_me ^ ^ ^ ^ attr decode_fu_nc_na_me ^ ^ ^ ^ args Str s cp1251_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ attr encode_fu_nc_na_me ^ ^ ^ ^ args Str s utf8_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

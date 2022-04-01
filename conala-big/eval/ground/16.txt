@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Subscript value Call func Attribute value Attribute value Name id Entry_fu_nc_na_me ^ ^ ^ ^ attr objects_fu_nc_na_me ^ ^ ^ ^ attr filter_fu_nc_na_me ^ ^ ^ ^ args ^ keywords ^ ^ ^ slice Slice lower None ^ ^ upper Num 1_fu_nc_na_me ^ ^ ^ step None ^ ^ ^ ^ ^ ^ attr get_fu_nc_na_me ^ ^ ^ ^ args ^ keywords ^ ^ ^ ^ ^ ^ ^

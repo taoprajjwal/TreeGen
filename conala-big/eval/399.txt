@@ -1,0 +1,1 @@
+  root Module body Assign targets Name id a_fu_nc_na_me ^ ^ ^ ^ value Call func Attribute value Name id np_fu_nc_na_me ^ ^ ^ ^ attr array_fu_nc_na_me ^ ^ ^ ^ args List elts Constant value 1_fu_nc_na_me ^ ^ ^ Constant value 1_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

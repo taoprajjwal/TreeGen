@@ -1,9 +1,10 @@
+"""
 f = open("train.txt", "r")
 lines = f.readlines()
 f.close()
 
 f = open("train_trans.txt", "w")
-
+"""
 rule = []
 
 def find_father(words, i):
@@ -121,7 +122,7 @@ def write_one(lines, index):
         f.write(str(i) + " ")
     f.write("\n")
 
-
+"""
 
 for i in range(10, len(lines) + 9):
     t = i % 9
@@ -135,12 +136,13 @@ for i in range(10, len(lines) + 9):
            #rules = lines[i - 8].strip().split()
 
 f.close()
+"""
 
 f = open("dev.txt", "r")
 lines = f.readlines()
 f.close()
 
-f = open("dev_trans.txt", "w")
+f = open("dev_trans_2.txt", "w")
 
 
 for i in range(10, len(lines) + 9):

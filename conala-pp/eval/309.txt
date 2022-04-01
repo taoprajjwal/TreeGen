@@ -1,0 +1,1 @@
+  root Module body Expr value Call func Attribute value Call func Attribute value Name id re_fu_nc_na_me ^ ^ ^ ^ attr sub_fu_nc_na_me ^ ^ ^ ^ args Constant value (?<=.)(?=.)_fu_nc_na_me ^ ^ ^ Constant value _fu_nc_na_me ^ ^ ^ Name id s_fu_nc_na_me ^ ^ ^ ^ ^ ^ attr group_fu_nc_na_me ^ ^ ^ ^ args Constant value FireShot3%2B%25282%2529.png_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

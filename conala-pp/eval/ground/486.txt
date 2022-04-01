@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Name id re_fu_nc_na_me ^ ^ ^ ^ attr findall_fu_nc_na_me ^ ^ ^ ^ args Str s Test_fu_nc_na_me \\d. ^ *\\d+)' ^ ^ ^ ^ Name id text_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

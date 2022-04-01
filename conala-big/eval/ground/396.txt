@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Attribute value Name id df_fu_nc_na_me ^ ^ ^ ^ attr index_fu_nc_na_me ^ ^ ^ ^ attr get_loc_fu_nc_na_me ^ ^ ^ ^ args Str s bob_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

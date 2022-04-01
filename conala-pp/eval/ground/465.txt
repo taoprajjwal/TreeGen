@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Name id json_fu_nc_na_me ^ ^ ^ ^ attr load_fu_nc_na_me ^ ^ ^ ^ args Call func Attribute value Attribute value Name id urllib_fu_nc_na_me ^ ^ ^ ^ attr request_fu_nc_na_me ^ ^ ^ ^ attr urlopen_fu_nc_na_me ^ ^ ^ ^ args Str s url_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

@@ -1,0 +1,1 @@
+root Module body Assign targets Name id new_file_fu_nc_na_me ^ ^ ^ ^ value Call func Name id open_fu_nc_na_me ^ ^ ^ ^ args Str s path/to/FILE_NAME.ext_fu_nc_na_me ^ ^ ^ Str s w_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

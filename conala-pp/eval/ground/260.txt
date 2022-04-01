@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Name id re_fu_nc_na_me ^ ^ ^ ^ attr findall_fu_nc_na_me ^ ^ ^ ^ args Str s n(?_fu_nc_na_me ^n ^ n)n+(? ^n ^ )(?i)' ^ ^ ^ ^ ^ Name id s_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

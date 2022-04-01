@@ -1,0 +1,1 @@
+  root Module body Expr value Call func Attribute value Call func Attribute value Name id pd_fu_nc_na_me ^ ^ ^ ^ attr concat_fu_nc_na_me ^ ^ ^ ^ args List elts Constant value year_fu_nc_na_me ^ ^ ^ Constant value year_fu_nc_na_me ^ ^ ^ Constant value 1_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ attr replace_fu_nc_na_me ^ ^ ^ ^ args Constant value 1_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

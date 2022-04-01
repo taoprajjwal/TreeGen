@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Str s it_is_icy_fu_nc_na_me ^ ^ ^ ^ attr replace_fu_nc_na_me ^ ^ ^ ^ args Str s i_fu_nc_na_me ^ ^ ^ Str s _fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

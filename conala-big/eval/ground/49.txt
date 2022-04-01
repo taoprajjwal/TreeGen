@@ -1,0 +1,1 @@
+root Module body Expr value Call func Name id list_fu_nc_na_me ^ ^ ^ ^ args Call func Name id reversed_fu_nc_na_me ^ ^ ^ ^ args Call func Name id list_fu_nc_na_me ^ ^ ^ ^ args Call func Name id range_fu_nc_na_me ^ ^ ^ ^ args Num 10_fu_nc_na_me ^ ^ ^ keywords ^ ^ ^ keywords ^ ^ ^ keywords ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

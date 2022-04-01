@@ -1,0 +1,1 @@
+root Module body Expr value Call func Name id print_fu_nc_na_me ^ ^ ^ ^ args BinOp left Subscript value Name id l_fu_nc_na_me ^ ^ ^ ^ slice Slice lower Num 3_fu_nc_na_me ^ ^ ^ upper None ^ ^ step None ^ ^ ^ ^ ^ ^ op Add ^ ^ right Subscript value Name id l_fu_nc_na_me ^ ^ ^ ^ slice Slice lower None ^ ^ upper Num 3_fu_nc_na_me ^ ^ ^ step None ^ ^ ^ ^ ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

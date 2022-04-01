@@ -1,0 +1,1 @@
+root Module body Assign targets Subscript value Name id d_fu_nc_na_me ^ ^ ^ ^ slice Index value Str s mynewkey_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ value Str s mynewvalue_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^

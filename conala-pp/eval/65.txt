@@ -1,0 +1,1 @@
+  root Module body Expr value Call func Name id list_fu_nc_na_me ^ ^ ^ ^ args Call func Name id zip_fu_nc_na_me ^ ^ ^ ^ args Starred value Name id itertools_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

@@ -1,0 +1,1 @@
+root Module body Assign targets Name id lst_fu_nc_na_me ^ ^ ^ ^ value ListComp elt Call func Name id Object_fu_nc_na_me ^ ^ ^ ^ args ^ keywords ^ ^ ^ generators comprehension target Name id __fu_nc_na_me ^ ^ ^ ^ iter Call func Name id range_fu_nc_na_me ^ ^ ^ ^ args Num 100_fu_nc_na_me ^ ^ ^ keywords ^ ^ ^ ifs ^ is_async 0_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

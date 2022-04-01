@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Name id target_fu_nc_na_me ^ ^ ^ ^ attr write_fu_nc_na_me ^ ^ ^ ^ args BinOp left Str s %r\n%r\n%r\n_fu_nc_na_me ^ ^ ^ ^ op Mod ^ ^ right Tuple elts Name id line1_fu_nc_na_me ^ ^ ^ Name id line2_fu_nc_na_me ^ ^ ^ Name id line3_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Name id os_fu_nc_na_me ^ ^ ^ ^ attr system_fu_nc_na_me ^ ^ ^ ^ args Str s gnome-terminal_-e_\'bas_fu_nc_na_me -c sudo_apt-get_update;_exec_bash"\'_fu_nc_na_me ^ ^ ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

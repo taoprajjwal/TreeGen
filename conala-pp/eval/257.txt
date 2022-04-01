@@ -1,0 +1,1 @@
+  root Module body Expr value Call func Name id print_fu_nc_na_me ^ ^ ^ ^ args Call func Attribute value Constant value _fu_nc_na_me ^ ^ ^ ^ attr unicode_fu_nc_na_me ^ ^ ^ ^ args Constant value utf8_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

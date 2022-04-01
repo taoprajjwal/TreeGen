@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Name id mylist_fu_nc_na_me ^ ^ ^ ^ attr sort_fu_nc_na_me ^ ^ ^ ^ args ^ keywords keyword arg key_fu_nc_na_me ^ ^ value Lambda args arg arg x_fu_nc_na_me ^ ^ annotation None ^ ^ ^ kwonlyargs ^ kw_ ^ body Subscript value Name id x_fu_nc_na_me ^ ^ ^ ^ slice Index value Str s title_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

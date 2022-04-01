@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Name id c_fu_nc_na_me ^ ^ ^ ^ attr execute_fu_nc_na_me ^ ^ ^ ^ args Str s INSERT_INTO_test_VALUES_(?,_'bar')_fu_nc_na_me ^ ^ ^ Tuple elts Name id testfield_fu_nc_na_me ^ ^ ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

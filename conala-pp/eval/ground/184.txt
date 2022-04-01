@@ -1,0 +1,1 @@
+root Module body Expr value Subscript value Call func Attribute value Attribute value Name id os_fu_nc_na_me ^ ^ ^ ^ attr path_fu_nc_na_me ^ ^ ^ ^ attr splitext_fu_nc_na_me ^ ^ ^ ^ args Name id filename_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ slice Index value Num 0_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

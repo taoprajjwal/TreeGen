@@ -1,0 +1,1 @@
+root Module body Expr value Call func Name id print_fu_nc_na_me ^ ^ ^ ^ args Call func Attribute value Str s Ð¿Ñ\x80Ð¸_fu_nc_na_me ^ ^ ^ ^ attr encode_fu_nc_na_me ^ ^ ^ ^ args Str s raw_unicode_escape_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

@@ -1,17 +1,18 @@
 #-*-coding:utf-8-*-
 import sys
 import os
+from tqdm import tqdm
+import numcodecs
+import zarr
+from numcodecs.zlib import Zlib
 import numpy as np
 import random
 from copy import deepcopy
 project = str(sys.argv[1]) + "/"
 
-def tqdm(a):
-    try:
-        from tqdm import tqdm
-        return tqdm(a)
-    except:
-        return a
+from time import time
+#project="conala-big/"
+
 
 vocabulary = {}
 vocabulary["<Start>"] = 2
@@ -140,17 +141,18 @@ def line2vec (line, tp, length):
     return vec
 
 def rule2classnum (line):
+    #print(line)
     line = str(line)
     numbers = line.strip().split()
     l = []
     #print (line)
     for n in numbers:
         num = int(n)
-        if num == 9999:
+        if num == 999999:
             print (num)
             exit()
-        if num >= 10000: # copy
-            num = num - 10000 + rulesnum
+        if num >= 1000000: # copy
+            num = num - 1000000 + rulesnum
         if num >= classnum: # check length
 #            print (num)
 #            print ("NL Length is not enough")
@@ -262,6 +264,7 @@ def line2charvec (line, length, charlength):
     return vec
 
 def line2rulevec (line, length):
+    #print(line)
     vec = np.zeros([length])
     tokens = line.strip().split()
     vec[0] = classnum + 2
@@ -314,7 +317,7 @@ def get_father_list(nodes):
 def build_lca(nodes_deepth):
     node = nodes_deepth
     fathers = []
-    father_list = nodes_deepth#get_father_list(nodes_deepth)
+    father_list = nodes_deepth #get_father_list(nodes_deepth)
     used = []
     for i in range(len(node)):
         par = []
@@ -324,6 +327,10 @@ def build_lca(nodes_deepth):
             index = father_list[index]
             if index not in used:
                 used.append(index)
+
+            if len(used)>100000:
+                print("memory leak possible")
+                exit()
         fathers.append(par[::-1])
     term = []
     for i in range(len(node)):
@@ -373,21 +380,34 @@ def line2mask(lines, length):
  
 
 def read_data (file_name):
+
     file2number = {}
     file2number["train_trans.txt"] = 0
-    file2number["dev_trans.txt"] = 1
-    file2number["test_trans.txt"] = 2
+    file2number["dev_trans.txt"] = 2
+    file2number["test_trans.txt"] = 1
 
     index_of_dataset = file2number[file_name]
+
+    str_dict={0:"train", 1:"test", 2:"dev"}
+    f=open(project+file_name,"r")
+    f_len=len(f.readlines())/9
+    chunks=False
+    if index_of_dataset==0 and "big" in project: ##chunk only for big projects for pps we can load entire array into memory
+        chunks=(f_len/1000,None)
+
+    za=zarr.open_array(f"{project}processed_{str_dict[index_of_dataset]}.zarr","w",shape=(f_len,19),dtype=object,object_codec=numcodecs.Pickle(),chunks=chunks)
+
     f = open(project + file_name, "r")
+
     file_data = []
+
     for i in range(8):
         file_data.append([])
 
     number2file = {}
     number2file[0] = project + "train_tree.txt"
-    number2file[1] = project + "dev_tree.txt"
-    number2file[2] = project + "test_tree.txt"
+    number2file[1] = project + "test_tree.txt"
+    number2file[2] = project + "dev_tree.txt"
     f_tree = open(number2file[index_of_dataset], "r")
     tree_path = f_tree.readlines()
     f_tree.close()
@@ -401,21 +421,35 @@ def read_data (file_name):
     rules_line = ""
     father = []
     now_site = 0
+    mem_store=[]
+    zarr_last_stored=0
     for i in tqdm(range(len(lines))):
+
         lines[i] = str(lines[i]).strip()
+
         t = i % 9
+
         if t == 0 : # the first line; Natural Languages;
+
             if bf != "":
                 all_vec.append(deepcopy(each_vec))
-            
+
             if bf != lines[i] and bf != "" and len(bf.split()) < length[0]: # length protection
-                trainset[index_of_dataset].append(deepcopy(all_vec))
+                #trainset[index_of_dataset].append(deepcopy(all_vec))
+                if i % 90000 == 0:
+                    mem_store.append(deepcopy(all_vec))
+                    arr=np.array(mem_store,dtype=object).reshape((i//9-zarr_last_stored,19))
+                    za[zarr_last_stored:i//9,:]=arr
+                    zarr_last_stored=i//9
+                    mem_store=[]
+                else:
+                    mem_store.append(deepcopy(all_vec))
+
                 all_vec = []
                 father = []
                 # 50% datas are selected
                 #if index_of_dataset in [0, 2, 1] and i >= len(lines) // 20:
                 #    return
-
 
             bf = lines[i]
 
@@ -424,10 +458,10 @@ def read_data (file_name):
             each_vec = []
             # Using vocabulary
             each_vec.append(line2vec(lines[i], "nl", length[t]))
-            # Using char_vocabulary for char embeddding; 
+            # Using char_vocabulary for char embeddding;
             each_vec.append(line2charvec(lines[i], length[t], char_len))
 
-        elif t == 6: # the line denotes the target output 
+        elif t == 6: # the line denotes the target output
             each_vec.append(rule2classvec(lines[i], length[t]))
         elif t == 5: # the line denotes the predict rules
             each_vec.append(line2rulevec(lines[i], length[t]))
@@ -438,11 +472,12 @@ def read_data (file_name):
             each_vec.append(vvv)
             each_vec.append(labels)
             #each_vec.append(line2mask(lines[i].strip(), length[t]))
-        else: 
+        else:
             each_vec.append(line2vec(lines[i], "tree",length[t]))
-        
+
         if t == 7:
             each_vec.append(bf)
+            #each_vec.append(np.array([0.]))
             tp_vec, fathers_vec = read_tree_path(tree_path, rules_line, now_site)
             each_vec.append(tp_vec)
             #print (each_vec[-1])
@@ -460,26 +495,74 @@ def read_data (file_name):
             v1, v2 = line2rules(lines[i], length[t], fathers_vec, bf)
             each_vec.append(v1)
             each_vec.append(v2)
+
         if t == 4:
             father.append(lines[i].split()[-1].replace("_root", ""))
 
 
+    # the last data;
+    arr=np.array(mem_store,dtype=object).reshape((i//9-zarr_last_stored,19))
+    za[zarr_last_stored:i//9,:]=arr
+    mem_store=[]
 
-    # the last data; 
-    all_vec.append(deepcopy(each_vec))
-    trainset[index_of_dataset].append(deepcopy(all_vec))
 
+def save_trainset():
+    str_dict={0:"train", 1:"test", 2:"dev"}
+    for i in range(3):
+        np_arr=np.array(trainset[i]).reshape(len(trainset[i]),19)
+        chunks=False
+        if i==0:
+            chunks=(len(trainset[0])/100000,None)
 
+        za=zarr.open_array(f"processed_{str_dict[i]}.zarr","w",shape=np_arr.shape,dtype=object,object_codec=numcodecs.Pickle(protocol=5),chunks=chunks)
+        za[:]=np_arr[:]
+
+def read_trainset():
+    str_dict={0:"train",1:"test",2:"dev"}
+
+    for i in range(3):
+        elem=zarr.open_array( f"{project}processed_{str_dict[i]}.zarr","r",dtype=object,object_codec=numcodecs.Pickle(protocol=5))
+        trainset[i]=elem
 
 def random_data (dataset): # shuffle training set  
     #num_lst = np.random.permutation(range(int(dataset.shape[0])))
     random.shuffle(dataset)
 
+
+
+def batch_yield(batch_size,dataset_name):
+    dic = {}
+    dic["train"] = 0
+    dic["test"] = 1
+    dic["dev"] = 2
+    index_of_dataset = dic[dataset_name]
+
+    global  trainset
+    data=trainset[index_of_dataset]
+    no_batches=len(data)/batch_size
+    batch_data=[]
+
+    all_data=[]
+    import time
+    if index_of_dataset!=0:
+        all_data=[a for a in data]
+        data=all_data
+
+    for data_no, data_sice in enumerate(data):
+        batch_data.append(data_sice)
+
+        if (data_no+1) % batch_size ==0:
+            return_list=[[batch_data[j][i] for j in range(len(batch_data))] for i in range(19)]
+            batch_data=[]
+            yield return_list, no_batches
+
+    return [[batch_data[j][i] for j in range(len(batch_data))] for i in range(19)], []
+
 def batch_data (batch_size, dataset_name): # get an acceptable data for NN;
     dic = {}
     dic["train"] = 0
-    dic["dev"] = 1
-    dic["test"] = 2
+    dic["test"] = 1
+    dic["dev"] = 2
     index_of_dataset = dic[dataset_name]
 
     global trainset
@@ -555,17 +638,32 @@ def batch_data (batch_size, dataset_name): # get an acceptable data for NN;
             batch_data[t] = np.array(batch_data[t])
         all_data.append(deepcopy(batch_data))
         all_index.append(deepcopy(batch_index))
-    
     return all_data, all_index
 
-def resolve_data():
+def resolve_data(create=False):
+
     global trainset
     readvoc()
-    read_data("train_trans.txt")
-    read_data("dev_trans.txt")
-    read_data("test_trans.txt")
+    print("vocab read")
+    if create:
+        read_data("dev_trans.txt")
+        print("dev read")
+        read_data("test_trans.txt")
+        print("test read")
+        read_data("train_trans.txt")
+        print("train read")
 
+        #save_trainset()
+
+    else:
+        read_trainset()
+        #resolve_data()
+
+resolve_data()
+
+""""
 if sys.argv[0] == "run.py":
     resolve_data()
 elif "predict" in sys.argv[0]:
     readvoc()
+"""

@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Name id parser_fu_nc_na_me ^ ^ ^ ^ attr add_argument_fu_nc_na_me ^ ^ ^ ^ args Str s --version_fu_nc_na_me ^ ^ ^ ^ keywords keyword arg action_fu_nc_na_me ^ ^ value Str s version_fu_nc_na_me ^ ^ ^ ^ ^ keyword arg version_fu_nc_na_me ^ ^ value Str s %(prog)s_2.0_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

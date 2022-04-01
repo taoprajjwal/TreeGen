@@ -1,0 +1,1 @@
+  root Module body Assign targets Name id fig_fu_nc_na_me ^ ^ ^ ^ value Call func Attribute value Name id ax_fu_nc_na_me ^ ^ ^ ^ attr add_subplot_fu_nc_na_me ^ ^ ^ ^ args Constant value 111_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

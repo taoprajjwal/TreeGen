@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Name id time_fu_nc_na_me ^ ^ ^ ^ attr strftime_fu_nc_na_me ^ ^ ^ ^ args Str s %Y-%m-%d_%H:%M:%S_fu_nc_na_me ^ ^ ^ Call func Attribute value Name id time_fu_nc_na_me ^ ^ ^ ^ attr gmtime_fu_nc_na_me ^ ^ ^ ^ args BinOp left Num 1236472051807 ^ ^ ^ op Div ^ ^ right Num 1000.0 ^ ^ ^ ^ ^ keywords ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Name id ftp_fu_nc_na_me ^ ^ ^ ^ attr storlines_fu_nc_na_me ^ ^ ^ ^ args BinOp left Str s STOR__fu_nc_na_me ^ ^ ^ ^ op Add ^ ^ right Name id filename_fu_nc_na_me ^ ^ ^ ^ ^ Call func Name id open_fu_nc_na_me ^ ^ ^ ^ args Name id filename_fu_nc_na_me ^ ^ ^ Str s r_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

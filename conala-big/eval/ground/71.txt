@@ -1,0 +1,1 @@
+root Module body Expr value Call func Name id print_fu_nc_na_me ^ ^ ^ ^ args Subscript value Call func Attribute value Name id x_fu_nc_na_me ^ ^ ^ ^ attr rsplit_fu_nc_na_me ^ ^ ^ ^ args Str s -_fu_nc_na_me ^ ^ ^ Num 1_fu_nc_na_me ^ ^ ^ keywords ^ ^ ^ slice Index value Num 0_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

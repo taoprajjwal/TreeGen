@@ -1,0 +1,1 @@
+  root Module body Expr value Call func Attribute value Constant value _fu_nc_na_me ^ ^ ^ ^ attr join_fu_nc_na_me ^ ^ ^ ^ args GeneratorExp elt Call func Name id int_fu_nc_na_me ^ ^ ^ ^ args Name id s_fu_nc_na_me ^ ^ ^ ^ ^ ^ generators comprehension target Name id s_fu_nc_na_me ^ ^ ^ ^ iter Name id s_fu_nc_na_me ^ ^ ^ ^ is_async 0_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

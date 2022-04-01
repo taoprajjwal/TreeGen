@@ -1,0 +1,1 @@
+  root Module body With items withitem context_expr Call func Name id open_fu_nc_na_me ^ ^ ^ ^ args Name id filename_fu_nc_na_me ^ ^ ^ Constant value rb_fu_nc_na_me ^ ^ ^ ^ ^ ^ optional_vars Name id f_fu_nc_na_me ^ ^ ^ ^ ^ ^ body Pass ^ ^ ^ ^ ^ ^

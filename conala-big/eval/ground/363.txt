@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Name id re_fu_nc_na_me ^ ^ ^ ^ attr findall_fu_nc_na_me ^ ^ ^ ^ args Str s sr_fu_nc_na_me js_fu_nc_na_me ^" ^ *\\bjquery\\b ^" ^ * ^ ^ _fu_nc_na_me ^ ^ ^ ^ ^ Name id data_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

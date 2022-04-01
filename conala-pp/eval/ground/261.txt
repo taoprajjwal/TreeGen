@@ -1,0 +1,1 @@
+root Module body Expr value Call func Name id print_fu_nc_na_me ^ ^ ^ ^ args Call func Attribute value Str s {0:.0f}%_fu_nc_na_me ^ ^ ^ ^ attr format_fu_nc_na_me ^ ^ ^ ^ args BinOp left BinOp left Num 1.0 ^ ^ ^ op Div ^ ^ right Num 3_fu_nc_na_me ^ ^ ^ ^ ^ op Mult ^ ^ right Num 100_fu_nc_na_me ^ ^ ^ ^ ^ keywords ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

@@ -1,0 +1,1 @@
+root Module body Expr value BinOp left Str s first_string_is:_%s,_second_one_is:_%s_fu_nc_na_me ^ ^ ^ ^ op Mod ^ ^ right Tuple elts Name id str1_fu_nc_na_me ^ ^ ^ Str s geo.tif_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

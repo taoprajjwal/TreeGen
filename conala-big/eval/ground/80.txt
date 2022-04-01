@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Name id db_fu_nc_na_me ^ ^ ^ ^ attr GqlQuery_fu_nc_na_me ^ ^ ^ ^ args Str s SELECT_*_FROM_Schedule_WHERE_station_fu_nc_na_me _$1' ^ ^ ^ ^ Call func Attribute value Name id foo_fu_nc_na_me ^ ^ ^ ^ attr key_fu_nc_na_me ^ ^ ^ ^ args ^ keywords ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

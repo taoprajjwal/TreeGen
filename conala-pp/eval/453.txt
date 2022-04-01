@@ -1,0 +1,1 @@
+  root Module body If test UnaryOp op Not ^ ^ operand Call func Attribute value Name id re_fu_nc_na_me ^ ^ ^ ^ attr sub_fu_nc_na_me ^ ^ ^ ^ args Constant value [_%^$]_fu_nc_na_me ^ ^ ^ Constant value \1_fu_nc_na_me ^ ^ ^ Name id text_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ body Pass ^ ^ ^ ^ ^ ^

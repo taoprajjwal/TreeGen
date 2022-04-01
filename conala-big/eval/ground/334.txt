@@ -1,0 +1,1 @@
+root Module body Expr value Compare left Call func Name id type_fu_nc_na_me ^ ^ ^ ^ args Name id o_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ ops Is ^ ^ comparators Name id str_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

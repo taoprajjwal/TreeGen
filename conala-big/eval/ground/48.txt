@@ -1,0 +1,1 @@
+root Module body Assign targets Name id myList_fu_nc_na_me ^ ^ ^ ^ value Call func Attribute value Str s ,_fu_nc_na_me ^ ^ ^ ^ attr join_fu_nc_na_me ^ ^ ^ ^ args Call func Name id map_fu_nc_na_me ^ ^ ^ ^ args Name id str_fu_nc_na_me ^ ^ ^ Name id myList_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

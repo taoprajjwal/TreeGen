@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Attribute value Name id datetime_fu_nc_na_me ^ ^ ^ ^ attr datetime_fu_nc_na_me ^ ^ ^ ^ attr strptime_fu_nc_na_me ^ ^ ^ ^ args Name id string_date_fu_nc_na_me ^ ^ ^ Str s %Y-%m-%d_%H:%M:%S.%f_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

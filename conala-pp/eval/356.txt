@@ -1,0 +1,1 @@
+  root Module body Expr value Call func Name id print_fu_nc_na_me ^ ^ ^ ^ args Call func Attribute value Attribute value Name id datetime_fu_nc_na_me ^ ^ ^ ^ attr datetime_fu_nc_na_me ^ ^ ^ ^ attr strptime_fu_nc_na_me ^ ^ ^ ^ args Constant value 2008_fu_nc_na_me ^ ^ ^ Constant value 1_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

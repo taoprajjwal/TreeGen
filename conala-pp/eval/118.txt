@@ -1,0 +1,1 @@
+  root Module body Expr value Call func Attribute value Call func Attribute value Name id re_fu_nc_na_me ^ ^ ^ ^ attr compile_fu_nc_na_me ^ ^ ^ ^ args Constant value [\ ^ \n]{2,}_fu_nc_na_me ^ ^ ^ Name id date_fu_nc_na_me ^ ^ ^ ^ ^ ^ attr strftime_fu_nc_na_me ^ ^ ^ ^ args Constant value KEY_THAT_MIGHT_EXIST_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

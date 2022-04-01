@@ -1,7 +1,7 @@
 #-*-coding:utf-8-*-
 import sys
-sys.argv[1]="ATIS"
 project = str(sys.argv[1]) + "/"
+
 from code_generate_model import *
 from resolve_data import *
 import os
@@ -11,8 +11,9 @@ import os
 import math
 import queue as Q
 from copy import deepcopy
+from tqdm import tqdm
 
-os.environ["CUDA_VISIBLE_DEVICES"]="0,1,2,3,4,5,6,7"
+os.environ["CUDA_VISIBLE_DEVICES"]= "6,7"
 
 vocabu = {}
 tree_vocabu = {}
@@ -22,14 +23,22 @@ vocabu_var = {}
 tree_vocabu_var = {}
 
 embedding_size = 256
+
+"""
 if "HS" not in project:
     embedding_size = 128
+"""
+
 conv_layernum = 256
 conv_layersize = 3
 rnn_layernum = 50
 batch_size = 30
+
+"""
 if "HS" not in project:
     batch_size = 64
+"""
+
 NL_vocabu_size = len(vocabulary)
 Tree_vocabu_size = len(tree_vocabulary)
 NL_len = nl_len
@@ -58,14 +67,17 @@ def pre_mask():
     return mask
 
 def get_card(lst):
+    print(len(lst))
     global cardnum
     global copynum
     global copylst
+
     if True:#len(cardnum) == 0:
         f = open(project + "nlnum.txt", "r")
         st = f.read()
         cardnum = eval(st)
         f.close()
+
     if True:#copynum == 0:
         f = open(project + "copylst.txt", "r")
         st = f.read()
@@ -78,6 +90,7 @@ def get_card(lst):
     copydic = {}
     wrongnum = 0
     wrongcnum = 0
+
     for i, x in enumerate(lst):
         if x == False:
           if copylst[i] == 1:
@@ -87,12 +100,19 @@ def get_card(lst):
               copydic[cardnum[i]] = 1
           if cardnum[i] not in dic:
             dic[cardnum[i]] = 1
+
     devs_num = 0
     if "ATIS" in project:
         devs_num = 491
     elif "HS" in project:
         devs_num = 66
+    elif "conala-big" in project:
+        devs_num=2379
+    elif "conala-pp" in project:
+        devs_num=200
+
     return devs_num-len(dic), wrongnum/copynum, wrongcnum
+
 
 def create_model(session, g, placeholder=""):
     if(os.path.exists(project + "save1")):
@@ -125,7 +145,7 @@ def get_state(batch_data):
 
 def g_pretrain(sess, model, batch_data):
 
-    print("Pretraining")
+    #print("Pretraining")
     batch = deepcopy(batch_data)
     rewards = np.zeros([len(batch[1])])
 
@@ -176,7 +196,7 @@ def rules_component_batch(batch):
     return [vecnode, vecson]
 
 def g_eval(sess, model, batch_data):
-    print("EVAL")
+    #print("EVAL")
     batch = batch_data
     rewards = np.zeros([len(batch[1])])
 
@@ -229,33 +249,40 @@ def run():
     ### For Multi-GPU (prevents BLAS GEMM launch failed)
     #physical_devices = tf.config.list_physical_devices('GPU')
     #for device in physical_devices:
-        #tf.config.experimental.set_memory_growth(device,True)
+        #tf.config.experimentapl.set_memory_growth(device,True)
 
     Code_gen_model = code_gen_model(classnum, embedding_size, conv_layernum, conv_layersize, rnn_layernum,
                                     batch_size, NL_vocabu_size, Tree_vocabu_size, NL_len, Tree_len, parent_len, learning_rate, keep_prob, len(char_vocabulary), rules_len)
-    valid_batch, _ = batch_data(batch_size, "dev") # read data
+    print("Code gen model complete")
+    valid_batch = [a for a,_ in batch_yield(batch_size, "dev")] # read data
+
+    print("batching complete")
+
     best_accuracy = 0
     best_card = 0
     config = tf.compat.v1.ConfigProto(allow_soft_placement=True)#, log_device_placement=True)
     config.gpu_options.allow_growth = True
     f = open(project + "out.txt", "w")
+
     with tf.compat.v1.Session(config=config) as sess:
         create_model(sess, Code_gen_model, "")
         best_time = -1
         for i in tqdm(range(pretrain_times)):
             Code_gen_model.steps += 1.
-            batch, _ = batch_data(batch_size, "train")
-            for j in tqdm(range(len(batch))):
+            total_b = len(trainset[0])//batch_size
+            for j, (data,total) in  enumerate( tqdm(batch_yield(batch_size,"train"),total=total_b)):
+
                 if i % 3 == 0 and j % 2000 == 0: #eval
                     ac = 0
                     res = []
                     sumac = 0
                     length = 0
+
                     for k in range(len(valid_batch)):
                         ac1, loss1, _ = g_eval(sess, Code_gen_model, valid_batch[k])
-
                         res.extend(loss1)
                         ac += ac1;
+
                     ac /= len(valid_batch)
                     card, copyc, copycard = get_card(res)
                     strs = str(ac) + " " + str(card) + "\n"
@@ -265,6 +292,7 @@ def run():
 
                     print("current accuracy " +
                           str(ac) + " string accuarcy is " + str(card))
+
                     if best_card < card:
                         best_card = card
                         best_accuracy = ac
@@ -272,6 +300,7 @@ def run():
                         best_time = i
                         print("find the better accuracy " +
                               str(best_accuracy) + "in epoches " + str(i))
+
                     elif card == best_card:
                         if (best_accuracy < ac):
                             best_card = card
@@ -280,6 +309,7 @@ def run():
                             print("find the better accuracy " +
                               str(best_accuracy) + "in epoches " + str(i))
                     
+
                 if i % 50 == 0 and j == 0:
                     ac = 0
                     res = []
@@ -296,17 +326,15 @@ def run():
 
                     print("current accuracy " +
                           str(ac) + " string accuracy is " + str(card))
+
                     save_model_time(sess, i, str(int(Code_gen_model.steps)))
 
-                g_pretrain(sess, Code_gen_model, batch[j])
+                g_pretrain(sess, Code_gen_model, data)
                 tf.compat.v1.train.global_step(sess, Code_gen_model.global_step)
 
     f.close()
     #print("training finish")
     return
-
-
-
 
 def main():
     run()

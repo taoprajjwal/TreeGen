@@ -1,0 +1,1 @@
+root Module body Expr value Call func Name id print_fu_nc_na_me ^ ^ ^ ^ args Call func Attribute value Name id re_fu_nc_na_me ^ ^ ^ ^ attr findall_fu_nc_na_me ^ ^ ^ ^ args Str s '\\\_fu_nc_na_me 0-7 ^ {1,3}'" ^ ^ ^ ^ Name id str_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

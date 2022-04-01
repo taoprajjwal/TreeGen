@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Name id re_fu_nc_na_me ^ ^ ^ ^ attr sub_fu_nc_na_me ^ ^ ^ ^ args Str s _fu_nc_na_me A-Z0-9 ^ *(?! a-z ^ )' ^ ^ ^ ^ ^ Str s _fu_nc_na_me ^ ^ ^ Name id string_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

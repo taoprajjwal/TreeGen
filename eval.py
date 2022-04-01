@@ -50,6 +50,19 @@ if "HS" in project:
     os.system("cd HS-B/eval && python3 ast2code.py")
     exit()
 
+if "pp" in project:
+    import os
+    os.system("cd conala-pp/eval && python3 gener.py")
+    os.system("cd conala-pp/eval && python3 ast2code.py")
+    exit()
+
+if "big" in project:
+    import os
+    os.system("cd conala-big/eval && python3 gener.py")
+    os.system("cd conala-big/eval && python3 ast2code.py")
+    exit()
+
+
 f = open(project + "test_output_ast.txt", "r")
 lines = f.readlines()
 f.close()

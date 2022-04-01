@@ -1,0 +1,1 @@
+root Module body Expr value Subscript value Name id df_fu_nc_na_me ^ ^ ^ ^ slice Index value Call func Attribute value Attribute value Subscript value Name id df_fu_nc_na_me ^ ^ ^ ^ slice Index value Str s ids_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ attr str_fu_nc_na_me ^ ^ ^ ^ attr contains_fu_nc_na_me ^ ^ ^ ^ args Str s ball_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

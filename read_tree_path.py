@@ -2,7 +2,7 @@ def read_tree (lines, file_name):
     f = open(file_name, "w")
     for i in range(len(lines)):
         t = i % 9
-        if t == 4:
+        if t == 4: #should be 5?
             f.write(lines[i])
     f.close()
 

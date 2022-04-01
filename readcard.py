@@ -26,6 +26,7 @@ def loadcardnum():
                 copylst.append(1)
             else:
                 copylst.append(0)
+
     file.write(str(l))
     file.close()
     f.write(str(copylst))

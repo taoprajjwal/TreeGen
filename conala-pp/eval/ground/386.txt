@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Name id df_fu_nc_na_me ^ ^ ^ ^ attr xs_fu_nc_na_me ^ ^ ^ ^ args Str s sat_fu_nc_na_me ^ ^ ^ ^ keywords keyword arg level_fu_nc_na_me ^ ^ value Str s day_fu_nc_na_me ^ ^ ^ ^ ^ keyword arg drop_level_fu_nc_na_me ^ ^ value NameConstant value False ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

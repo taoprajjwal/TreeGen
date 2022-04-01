@@ -1,0 +1,1 @@
+root Module body Expr value BinOp left BinOp left List elts Str s it_fu_nc_na_me ^ ^ ^ ^ ^ ^ op Add ^ ^ right List elts Str s was_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ op Add ^ ^ right List elts Str s annoying_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

@@ -1,0 +1,1 @@
+root Module body Expr value Call func Name id map_fu_nc_na_me ^ ^ ^ ^ args Name id int_fu_nc_na_me ^ ^ ^ Call func Name id eval_fu_nc_na_me ^ ^ ^ ^ args Call func Name id input_fu_nc_na_me ^ ^ ^ ^ args Str s Enter_the_unfriendly_numbers:__fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ keywords ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

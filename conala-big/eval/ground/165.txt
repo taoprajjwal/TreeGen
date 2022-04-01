@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Str s abcd}def}_fu_nc_na_me ^ ^ ^ ^ attr rfind_fu_nc_na_me ^ ^ ^ ^ args Str s }_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

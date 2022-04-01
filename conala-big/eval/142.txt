@@ -1,0 +1,1 @@
+  root Module body With items withitem context_expr Call func Attribute value Name id os_fu_nc_na_me ^ ^ ^ ^ attr listdir_fu_nc_na_me ^ ^ ^ ^ args Name id path_fu_nc_na_me ^ ^ ^ ^ ^ ^ optional_vars Name id f_fu_nc_na_me ^ ^ ^ ^ ^ ^ body Pass ^ ^ ^ ^ ^ ^

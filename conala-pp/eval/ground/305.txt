@@ -1,0 +1,1 @@
+root Module body Assign targets Name id ip_fu_nc_na_me ^ ^ ^ ^ value Call func Attribute value Name id re_fu_nc_na_me ^ ^ ^ ^ attr findall_fu_nc_na_me ^ ^ ^ ^ args Str s _fu_nc_na_me 0-9 ^ +(?:\\. 0-9 ^ +){3}' ^ ^ ^ ^ ^ Name id s_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

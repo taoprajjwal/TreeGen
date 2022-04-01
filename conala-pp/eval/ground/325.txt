@@ -1,0 +1,1 @@
+root Module body Expr value Call func Name id dict_fu_nc_na_me ^ ^ ^ ^ args List elts Tuple elts Str s Name_fu_nc_na_me ^ ^ ^ Str s Joe_fu_nc_na_me ^ ^ ^ ^ ^ Tuple elts Str s Age_fu_nc_na_me ^ ^ ^ Num 22_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

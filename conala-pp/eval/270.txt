@@ -1,0 +1,1 @@
+  root Module body Expr value Call func Attribute value Call func Attribute value Name id os_fu_nc_na_me ^ ^ ^ ^ attr popen_fu_nc_na_me ^ ^ ^ ^ args Constant value C:\Python27\Lib\genericpath.py_fu_nc_na_me ^ ^ ^ ^ ^ ^ attr st_size_fu_nc_na_me ^ ^ ^ ^ args Constant value /new/dir_fu_nc_na_me ^ ^ ^ Constant value %d/%m/%Y_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

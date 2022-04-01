@@ -1,0 +1,1 @@
+root Module body Expr value ListComp elt Call func Attribute value Name id line_fu_nc_na_me ^ ^ ^ ^ attr rstrip_fu_nc_na_me ^ ^ ^ ^ args Str s \n_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ generators comprehension target Name id line_fu_nc_na_me ^ ^ ^ ^ iter Name id file_fu_nc_na_me ^ ^ ^ ^ ifs ^ is_async 0_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

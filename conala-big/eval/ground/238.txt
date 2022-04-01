@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Name id np_fu_nc_na_me ^ ^ ^ ^ attr mean_fu_nc_na_me ^ ^ ^ ^ args Name id a_fu_nc_na_me ^ ^ ^ ^ keywords keyword arg axis_fu_nc_na_me ^ ^ value Num 1_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

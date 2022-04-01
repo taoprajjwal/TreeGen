@@ -1,0 +1,1 @@
+root Module body Assign targets Subscript value Attribute value Name id app_fu_nc_na_me ^ ^ ^ ^ attr config_fu_nc_na_me ^ ^ ^ ^ slice Index value Str s SECRET_KEY_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ value Str s Your_secret_string_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^

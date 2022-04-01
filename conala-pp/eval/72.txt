@@ -1,0 +1,1 @@
+  root Module body Expr value Call func Attribute value Call func Attribute value Attribute value Name id os_fu_nc_na_me ^ ^ ^ ^ attr upload_fu_nc_na_me ^ ^ ^ ^ attr upload_fu_nc_na_me ^ ^ ^ ^ args Constant value upload_fu_nc_na_me ^ ^ ^ ^ ^ ^ attr strftime_fu_nc_na_me ^ ^ ^ ^ args Constant value /etc_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

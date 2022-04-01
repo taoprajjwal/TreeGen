@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Attribute value Name id sys_fu_nc_na_me ^ ^ ^ ^ attr stdout_fu_nc_na_me ^ ^ ^ ^ attr write_fu_nc_na_me ^ ^ ^ ^ args Str s ._fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

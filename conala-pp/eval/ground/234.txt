@@ -1,0 +1,1 @@
+root Module body Assign targets Name id d_fu_nc_na_me ^ ^ ^ ^ value Call func Attribute value Name id ast_fu_nc_na_me ^ ^ ^ ^ attr literal_eval_fu_nc_na_me ^ ^ ^ ^ args Str s {'code1':1,'code2':1}_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

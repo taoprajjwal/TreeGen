@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Name id plt_fu_nc_na_me ^ ^ ^ ^ attr colorbar_fu_nc_na_me ^ ^ ^ ^ args ^ keywords keyword arg mappable_fu_nc_na_me ^ ^ value Name id mappable_fu_nc_na_me ^ ^ ^ ^ ^ keyword arg cax_fu_nc_na_me ^ ^ value Name id ax3_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

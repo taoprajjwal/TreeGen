@@ -1,0 +1,1 @@
+root Module body For target Name id line_fu_nc_na_me ^ ^ ^ ^ iter Name id mylog_fu_nc_na_me ^ ^ ^ ^ body Expr value Call func Attribute value Name id list1_fu_nc_na_me ^ ^ ^ ^ attr append_fu_nc_na_me ^ ^ ^ ^ args Name id line_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ orelse ^ ^ ^ ^ ^

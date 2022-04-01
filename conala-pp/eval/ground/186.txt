@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Call func Attribute value Str s Docs/src/Scripts/temp_fu_nc_na_me ^ ^ ^ ^ attr replace_fu_nc_na_me ^ ^ ^ ^ args Str s /_fu_nc_na_me ^ ^ ^ Str s /\x00/_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ attr split_fu_nc_na_me ^ ^ ^ ^ args Str s \x00_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

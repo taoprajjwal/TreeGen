@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Attribute value Name id urllib_fu_nc_na_me ^ ^ ^ ^ attr request_fu_nc_na_me ^ ^ ^ ^ attr urlretrieve_fu_nc_na_me ^ ^ ^ ^ args Str s http://www.example.com/songs/mp3.mp3_fu_nc_na_me ^ ^ ^ Str s mp3.mp3_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

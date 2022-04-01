@@ -1,0 +1,1 @@
+  root Module body Expr value Call func Attribute value Attribute value Name id request_fu_nc_na_me ^ ^ ^ ^ attr datetime_fu_nc_na_me ^ ^ ^ ^ attr combine_fu_nc_na_me ^ ^ ^ ^ args List elts Constant value TRX_DATE_fu_nc_na_me ^ ^ ^ Constant value mycsv.csv_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

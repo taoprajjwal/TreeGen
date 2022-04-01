@@ -1,0 +1,1 @@
+root Module body Expr value Call func Name id float_fu_nc_na_me ^ ^ ^ ^ args Call func Attribute value Str s 123,456.908_fu_nc_na_me ^ ^ ^ ^ attr replace_fu_nc_na_me ^ ^ ^ ^ args Str s ,_fu_nc_na_me ^ ^ ^ Str s _fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

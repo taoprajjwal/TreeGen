@@ -1,0 +1,1 @@
+root Module body Expr value Call func Name id sum_fu_nc_na_me ^ ^ ^ ^ args ListComp elt Subscript value Name id pair_fu_nc_na_me ^ ^ ^ ^ slice Index value Num 0_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ generators comprehension target Name id pair_fu_nc_na_me ^ ^ ^ ^ iter Name id list_of_pairs_fu_nc_na_me ^ ^ ^ ^ ifs ^ is_async 0_fu_nc_na_me ^ ^ ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

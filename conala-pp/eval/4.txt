@@ -1,0 +1,1 @@
+  root Module body Expr value Call func Attribute value Attribute value Name id urllib_fu_nc_na_me ^ ^ ^ ^ attr parse_fu_nc_na_me ^ ^ ^ ^ attr unquote_fu_nc_na_me ^ ^ ^ ^ args Constant value utf-8_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

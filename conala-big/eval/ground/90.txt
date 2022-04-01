@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Name id myfile_fu_nc_na_me ^ ^ ^ ^ attr write_fu_nc_na_me ^ ^ ^ ^ args Call func Attribute value Str s \n_fu_nc_na_me ^ ^ ^ ^ attr join_fu_nc_na_me ^ ^ ^ ^ args Name id lines_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

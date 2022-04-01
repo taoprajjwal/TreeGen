@@ -1,0 +1,1 @@
+root Module body Expr value Call func Name id sorted_fu_nc_na_me ^ ^ ^ ^ args Name id list5_fu_nc_na_me ^ ^ ^ Lambda args arg arg x_fu_nc_na_me ^ ^ annotation None ^ ^ ^ kwonlyargs ^ kw_ ^ body Tuple elts Call func Name id degree_fu_nc_na_me ^ ^ ^ ^ args Name id x_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ Name id x_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

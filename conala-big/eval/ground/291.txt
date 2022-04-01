@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Subscript value Name id df_fu_nc_na_me ^ ^ ^ ^ slice Index value Str s range_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ attr replace_fu_nc_na_me ^ ^ ^ ^ args Str s ,_fu_nc_na_me ^ ^ ^ Str s -_fu_nc_na_me ^ ^ ^ ^ keywords keyword arg inplace_fu_nc_na_me ^ ^ value NameConstant value True ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Name id pickle_fu_nc_na_me ^ ^ ^ ^ attr dump_fu_nc_na_me ^ ^ ^ ^ args Name id mylist_fu_nc_na_me ^ ^ ^ Call func Name id open_fu_nc_na_me ^ ^ ^ ^ args Str s save.txt_fu_nc_na_me ^ ^ ^ Str s wb_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

@@ -1,0 +1,1 @@
+root Module body Expr value GeneratorExp elt Name id n_fu_nc_na_me ^ ^ ^ ^ generators comprehension target Name id n_fu_nc_na_me ^ ^ ^ ^ iter List elts Num 1_fu_nc_na_me ^ ^ Num 2_fu_nc_na_me ^ ^ Num 3_fu_nc_na_me ^ ^ Num 5_fu_nc_na_me ^ ^ ^ ^ ^ ifs ^ is_async 0_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

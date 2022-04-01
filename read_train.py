@@ -1,7 +1,7 @@
 f = open("train.txt", "r")
 lines = f.readlines()
-dic1 = {}
-dic2 = {}
+dic1 = {} # nl voc dict
+dic2 = {} #tree dict
 dic3 = {} # char dict
 for i in range(len(lines)):
     t = i % 8

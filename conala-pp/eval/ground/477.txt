@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Name id newFile_fu_nc_na_me ^ ^ ^ ^ attr write_fu_nc_na_me ^ ^ ^ ^ args Call func Attribute value Name id struct_fu_nc_na_me ^ ^ ^ ^ attr pack_fu_nc_na_me ^ ^ ^ ^ args Str s 5B_fu_nc_na_me ^ ^ ^ Starred value Name id newFileBytes_fu_nc_na_me ^ ^ ^ ^ ^ ^ keywords ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

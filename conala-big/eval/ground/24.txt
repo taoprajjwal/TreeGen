@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Attribute value Name id sys_fu_nc_na_me ^ ^ ^ ^ attr path_fu_nc_na_me ^ ^ ^ ^ attr append_fu_nc_na_me ^ ^ ^ ^ args Str s /path/to/whatever_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

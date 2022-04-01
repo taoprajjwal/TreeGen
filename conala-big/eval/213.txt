@@ -1,0 +1,1 @@
+  root Module body Assign targets Name id Beautifulsoup_fu_nc_na_me ^ ^ ^ ^ value Call func Attribute value Name id soup_fu_nc_na_me ^ ^ ^ ^ attr find_all_fu_nc_na_me ^ ^ ^ ^ args Constant value utf-8_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

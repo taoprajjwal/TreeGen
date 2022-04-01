@@ -1,0 +1,1 @@
+root Module body Expr value Subscript value Name id a_fu_nc_na_me ^ ^ ^ ^ slice ExtSlice dims Slice lower None ^ ^ upper None ^ ^ step None ^ ^ ^ Index value Attribute value Name id np_fu_nc_na_me ^ ^ ^ ^ attr newaxis_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

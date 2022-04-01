@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value Name id subprocess_fu_nc_na_me ^ ^ ^ ^ attr call_fu_nc_na_me ^ ^ ^ ^ args List elts Str s python.exe_fu_nc_na_me ^ ^ ^ Str s hello.py_fu_nc_na_me ^ ^ ^ Str s htmlfilename.htm_fu_nc_na_me ^ ^ ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

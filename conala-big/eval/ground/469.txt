@@ -1,0 +1,1 @@
+root Module body Expr value Call func Attribute value BinOp left Name id t_fu_nc_na_me ^ ^ ^ ^ op Sub ^ ^ right Call func Attribute value Name id datetime_fu_nc_na_me ^ ^ ^ ^ attr datetime_fu_nc_na_me ^ ^ ^ ^ args Num 1970_fu_nc_na_me ^ ^ Num 1_fu_nc_na_me ^ ^ Num 1_fu_nc_na_me ^ ^ ^ keywords ^ ^ ^ ^ ^ attr total_seconds_fu_nc_na_me ^ ^ ^ ^ args ^ keywords ^ ^ ^ ^ ^ ^ ^

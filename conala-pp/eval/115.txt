@@ -1,0 +1,1 @@
+  root Module body Expr value Call func Name id print_fu_nc_na_me ^ ^ ^ ^ args Call func Attribute value Name id re_fu_nc_na_me ^ ^ ^ ^ attr sub_fu_nc_na_me ^ ^ ^ ^ args Constant value \((\w+)\)_fu_nc_na_me ^ ^ ^ Constant value \1_fu_nc_na_me ^ ^ ^ Name id s_fu_nc_na_me ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^

@@ -1,0 +1,1 @@
+root Module body Assign targets Name id encoded_fu_nc_na_me ^ ^ ^ ^ value Call func Attribute value Name id base64_fu_nc_na_me ^ ^ ^ ^ attr b64encode_fu_nc_na_me ^ ^ ^ ^ args Str s data_to_be_encoded_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

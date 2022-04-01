@@ -1,0 +1,1 @@
+root Module body Expr value Call func Name id print_fu_nc_na_me ^ ^ ^ ^ args Attribute value Call func Attribute value Name id soup_fu_nc_na_me ^ ^ ^ ^ attr find_fu_nc_na_me ^ ^ ^ ^ args Str s name_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ attr string_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^

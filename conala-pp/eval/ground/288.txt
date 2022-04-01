@@ -1,0 +1,1 @@
+root Module body Expr value Call func Name id getattr_fu_nc_na_me ^ ^ ^ ^ args Name id obj_fu_nc_na_me ^ ^ ^ Str s attr_fu_nc_na_me ^ ^ ^ ^ keywords ^ ^ ^ ^ ^ ^ ^
